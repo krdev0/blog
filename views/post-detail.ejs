@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <%- include('includes/head', { title: post.title }) %>
+  <%- include('includes/head', { title: posts.title }) %>
     <link rel="stylesheet" href="/styles/posts.css">
 </head>
 
@@ -13,16 +13,16 @@
         <%= post.title %>
       </h1>
       <section id="post-meta">
-        <div><a href="mailto:<%= posts.author_email %>">
+        <div><a href="mailto:<%= post.author_email %>">
             <%= post.author_name %>
           </a></div>
         <time datetime="<%= post.date %>">
-          <%= post.date %>
+          <%= post.humanReadableDate %>
         </time>
       </section>
       <hr>
       <section>
-        <p id="body">...</p>
+        <p id="body"><%= post.body %></p>
       </section>
     </main>
 </body>

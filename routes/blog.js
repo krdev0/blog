@@ -47,14 +47,25 @@ router.get('/posts/:id', async (req, res) => {
     WHERE posts.id = ?
     `;
 
-    const [postInfo] = await db.query(query, [req.params.id]);
+    const [posts] = await db.query(query, [req.params.id]);
 
-    if (!postInfo || postInfo.length === 0) {
+    if (!posts || posts.length === 0) {
         return res.status(404).render('404');
     }
 
+    const postData = {
+        ...posts[0],
+        date: posts[0].date.toISOString(),
+        humanReadableDate: posts[0].date.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+    }
+
     res.render('post-detail', {
-        post: postInfo[0]
+        posts: postData
     });
 });
 
