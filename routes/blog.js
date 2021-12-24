@@ -92,7 +92,18 @@ router.post('/posts/:id/edit', async function (req, res) {
     WHERE id = ?
     `
 
-    const results = await db.query(query, [req.body.title, req.body.summary, req.body.content, req.params.id]);
+    await db.query(query, [req.body.title, req.body.summary, req.body.content, req.params.id]);
+
+    res.redirect('/posts');
+});
+
+router.post('/posts/:id/delete', async function (req, res) {
+    const query = `
+    DELETE FROM posts
+    WHERE id = ?
+    `
+
+    await db.query(query, [req.params.id]);
 
     res.redirect('/posts');
 });
