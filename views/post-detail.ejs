@@ -13,9 +13,9 @@
         <%= post.title %>
       </h1>
       <section id="post-meta">
-        <div><a href="mailto:<%= post.author_email %>">
+        <span><a href="mailto:<%= post.author_email %>">
             <%= post.author_name %>
-          </a></div>
+          </a></span> | 
         <time datetime="<%= post.date %>">
           <%= post.humanReadableDate %>
         </time>
