@@ -18,13 +18,18 @@
 
     </x-slot>
 
-    <div x-show="open" class="absolute w-full bg-gray-100 mt-1 rounded-xl z-50" style="display:none;">
+    <div x-show="open" class="absolute w-full bg-gray-100 mt-1 rounded-xl z-50 max-h-64 overflow-y-auto"
+         style="display:none;">
 
-        <x-dropdown-item href="/">All</x-dropdown-item>
+        <x-dropdown-item href="/?{{ http_build_query(request()->except('category', 'page')) }}"
+                         :active="request()->routeIs('home')"
+        >
+            All
+        </x-dropdown-item>
 
         @foreach($categories as $cat)
             <x-dropdown-item
-                    href="/?category={{$cat->slug}}&{{ http_build_query(request()->except('category')) }}"
+                    href="/?category={{$cat->slug}}&{{ http_build_query(request()->except('category', 'page')) }}"
                     :active="isset($currentCategory) && $currentCategory->is($cat)"
             >
                 {{ucwords($cat->name)}}
