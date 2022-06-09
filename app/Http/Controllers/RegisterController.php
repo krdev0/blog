@@ -10,4 +10,15 @@ class RegisterController extends Controller
     {
         return view('register.create');
     }
+
+    public function store()
+    {
+        var_dump(request()->all());
+//        request()->validate([
+//           'name' => 'required',
+//           'username' => 'required|min:4',
+//           'email' => 'required|email',
+//           'password' => 'required|min:6'
+//        ]);
+    }
 }
