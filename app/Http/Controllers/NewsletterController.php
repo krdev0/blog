@@ -14,7 +14,6 @@ class NewsletterController extends Controller
         ]);
 
         try {
-            ddd('123');
             $newsletter->subscribe(request('email'));
         } catch (\Exception $e) {
             throw ValidationException::withMessages([

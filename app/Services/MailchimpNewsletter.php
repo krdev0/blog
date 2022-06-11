@@ -6,10 +6,11 @@ use MailchimpMarketing\ApiClient;
 
 class MailchimpNewsletter implements Newsletter
 {
+    protected ApiClient $client;
 
-    public function __construct(protected ApiClient $client)
+    public function __construct($client)
     {
-
+        $this->client = $client;
     }
 
     public function subscribe(string $email, string $list = null)
