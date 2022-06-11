@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'be070a7848228e5cd6aa619ed2e1862ebe52538b',
+        'reference' => 'cbe0f457ada5c7f3488e2c80c68a43d92ac65c83',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -388,7 +388,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'be070a7848228e5cd6aa619ed2e1862ebe52538b',
+            'reference' => 'cbe0f457ada5c7f3488e2c80c68a43d92ac65c83',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -461,6 +461,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
+            'dev_requirement' => false,
+        ),
+        'mailchimp/marketing' => array(
+            'pretty_version' => '3.0.75',
+            'version' => '3.0.75.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mailchimp/marketing',
+            'aliases' => array(),
+            'reference' => '759e043ecce64c2374f05fcd600b69a3d1583b8c',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
