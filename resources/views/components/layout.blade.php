@@ -45,9 +45,9 @@
 
     <footer id="newsletter"
             class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-        <img src="/images//lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+        <img src="/images/email.png" alt="" class="mx-auto mb-6" style="width: 100px;">
         <h5 class="text-3xl">Stay in touch with the latest posts</h5>
-        <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
+        <p class="text-sm mt-3">Your inbox will be clean. No spam.</p>
 
         <div class="mt-10">
             <div class="relative inline-block mx-auto">
@@ -57,7 +57,7 @@
                     <div class="flex lg:bg-gray-200 rounded-full">
                         <div class="lg:py-3 lg:px-5 flex items-center">
                             <label for="email" class="hidden lg:inline-block">
-                                <img src="/images//mailbox-icon.svg" alt="mailbox letter">
+                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
                             <input id="email" type="text" name="email" placeholder="Your email address"
