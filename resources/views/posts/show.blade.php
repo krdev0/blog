@@ -22,7 +22,7 @@
                 <div class="col-span-8">
                     <div class="hidden lg:flex justify-between mb-6">
                         <a href="/"
-                           class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
+                           class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-red-500">
                             <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                                 <g fill="none" fill-rule="evenodd">
                                     <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
@@ -77,14 +77,14 @@
                             </div>
 
                             <div class="mt-4 text-right">
-                                <button type="submit" class="text-sm bg-blue-500 rounded-xl py-2 px-4 text-white">Post
+                                <button type="submit" class="text-sm bg-red-500 rounded-xl py-2 px-4 text-white">Post
                                     comment
                                 </button>
                             </div>
                         </form>
                 </section>
                 @else
-                    <p><a href="/login" class="text-blue-500">Log in</a> to leave a comment<!doctype html>
+                    <p><a href="/login" class="text-red-500">Log in</a> to leave a comment<!doctype html>
                         <html lang="en">
                         <head>
                             <meta charset="UTF-8">

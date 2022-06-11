@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <button type="submit" class="px-4 py-2 bg-blue-500 rounded-full text-white">
+                    <button type="submit" class="px-4 py-2 bg-red-500 rounded-full text-white">
                         Submit
                     </button>
                 </div>
