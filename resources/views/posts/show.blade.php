@@ -53,11 +53,29 @@
                 </div>
 
                 <section class="col-span-12 mt-6 bg-gray-100 p-6 rounded-xl border border-gray-300">
+                    <form action="POST" action="/">
+                        @csrf
+                        <header>
+                            <h2>Add a comment!</h2>
+                        </header>
+                        
+                        <div class="mt-4">
+                            <textarea name="body" class="p-4 w-full text-sm rounded-xl focus:outline-none focus:ring" id="body" cols="30" rows="10"
+                            placeholder="Add your comment here..."
+                            ></textarea>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="text-sm bg-blue-500 rounded-xl py-2 px-4 text-white">Post comment</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="col-span-12 mt-6 bg-gray-100 p-6 rounded-xl border border-gray-300">
                     <h2 class="mb-4 font-bold text-xl">Comments:</h2>
-                   <x-post-comment />
-                   <x-post-comment />
-                   <x-post-comment />
-                   <x-post-comment />
+                    @foreach($post->comments as $comment)
+                        <x-post-comment :comment="$comment" />
+                    @endforeach
                 </section>
             </article>
         </main>
