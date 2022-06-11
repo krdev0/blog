@@ -53,28 +53,57 @@
                 </div>
 
                 <section class="col-span-12 mt-6 bg-gray-100 p-6 rounded-xl border border-gray-300">
-                    <form action="POST" action="/">
-                        @csrf
-                        <header>
-                            <h2>Add a comment!</h2>
-                        </header>
-                        
-                        <div class="mt-4">
-                            <textarea name="body" class="p-4 w-full text-sm rounded-xl focus:outline-none focus:ring" id="body" cols="30" rows="10"
-                            placeholder="Add your comment here..."
-                            ></textarea>
-                        </div>
+                    @auth()
+                        <form method="POST" action="/posts/{{$post->slug}}/comments">
+                            @csrf
+                            <header>
+                                <h2>Add a comment!</h2>
+                            </header>
 
-                        <div class="mt-4">
-                            <button type="submit" class="text-sm bg-blue-500 rounded-xl py-2 px-4 text-white">Post comment</button>
-                        </div>
-                    </form>
+                            <div class="mt-4">
+                            <textarea
+                                    name="body"
+                                    class="p-4 w-full text-sm rounded-xl focus:outline-none focus:ring"
+                                    id="body"
+                                    cols="30"
+                                    rows="10"
+                                    placeholder="Add your comment here..."
+                                    required
+                            ></textarea>
+
+                                @error('body')
+                                    <span class="text-xs text-red-500">{{$message}}</span>
+                                @enderror
+                            </div>
+
+                            <div class="mt-4 text-right">
+                                <button type="submit" class="text-sm bg-blue-500 rounded-xl py-2 px-4 text-white">Post
+                                    comment
+                                </button>
+                            </div>
+                        </form>
                 </section>
+                @else
+                    <p><a href="/login" class="text-blue-500">Log in</a> to leave a comment<!doctype html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport"
+                                  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                            <title>Document</title>
+                        </head>
+                        <body>
+
+                        </body>
+                        </html>
+                    </p>
+                @endauth
 
                 <section class="col-span-12 mt-6 bg-gray-100 p-6 rounded-xl border border-gray-300">
                     <h2 class="mb-4 font-bold text-xl">Comments:</h2>
                     @foreach($post->comments as $comment)
-                        <x-post-comment :comment="$comment" />
+                        <x-post-comment :comment="$comment"/>
                     @endforeach
                 </section>
             </article>
