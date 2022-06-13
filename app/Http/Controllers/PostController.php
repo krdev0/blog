@@ -32,4 +32,9 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+
+    public function store()
+    {
+        ddd(request()->all());
+    }
 }
