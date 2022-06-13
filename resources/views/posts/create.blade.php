@@ -14,11 +14,31 @@
                            name="title"
                            id="title"
                            type="text"
+                           value="{{old('title')}}"
                            placeholder="Blog post title"
                            required
                     >
 
                     @error('title')
+                    <p class="text-xs text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label for="slug" class="block mb-2 font-bold text-gray-700">
+                        Title
+                    </label>
+
+                    <input class="border border-gray-400 p-2 w-full rounded-xl"
+                           name="slug"
+                           id="slug"
+                           type="text"
+                           placeholder="Post slug"
+                           value="{{old('slug')}}"
+                           required
+                    >
+
+                    @error('slug')
                     <p class="text-xs text-red-500">{{$message}}</p>
                     @enderror
                 </div>
@@ -33,6 +53,7 @@
                            id="excerpt"
                            type="text"
                            placeholder="Blog excerpt"
+                           value="{{old('excerpt')}}"
                            required
                     >
 
@@ -47,11 +68,11 @@
                     </label>
 
                     <textarea class="border border-gray-400 p-2 w-full rounded-xl"
-                           name="body"
-                           id="body"
-                           placeholder="Blog post content"
-                           required
-                    ></textarea>
+                              name="body"
+                              id="body"
+                              placeholder="Blog post content"
+                              required
+                    >{{old('body')}}</textarea>
 
                     @error('body')
                     <p class="text-xs text-red-500">{{$message}}</p>
@@ -65,7 +86,11 @@
 
                     <select name="category_id" id="category_id">
                         @foreach(\App\Models\Category::all() as $category)
-                            <option value="{{$category->id}}">{{ucwords($category->name)}}</option>
+                            <option
+                                    value="{{$category->id}}"
+                                    {{old('category_id') == $category->id ? 'selected' : ''}}>
+                                {{ucwords($category->name)}}
+                            </option>
                         @endforeach
                     </select>
 
