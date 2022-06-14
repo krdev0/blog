@@ -95,7 +95,7 @@
                     </select>
 
                     @error('category')
-                    <p class="text-xs text-red-500">{{$message}}</p>
+                    <p class="text-xs text-red-400">{{$message}}</p>
                     @enderror
                 </div>
 
