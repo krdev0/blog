@@ -100,7 +100,7 @@
                 </div>
 
                 <button type="submit" class="font-semibold bg-red-500 py-1 px-4 text-white rounded-full">
-                    Create post
+                    Create post!
                 </button>
             </form>
         </div>
