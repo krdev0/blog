@@ -2,7 +2,7 @@
     <section class="px-6 py-8">
         <h1 class="text-2xl font-bold text-center mb-8">Create new blog post!</h1>
         <div class="max-w-xl mx-auto p-4 bg-gray-100 rounded-xl">
-            <form action="/admin/posts" method="POST">
+            <form action="/admin/posts" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-6">
@@ -39,6 +39,23 @@
                     >
 
                     @error('slug')
+                    <p class="text-xs text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label for="thumbnail" class="block mb-2 font-bold   text-gray-700">
+                        Post Thumbnail
+                    </label>
+
+                    <input class="border border-gray-400 p-2 w-full rounded-xl"
+                           name="thumbnail"
+                           id="thumbnail"
+                           type="file"
+                           required
+                    >
+
+                    @error('thumbnail')
                     <p class="text-xs text-red-500">{{$message}}</p>
                     @enderror
                 </div>
