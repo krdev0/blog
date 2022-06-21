@@ -37,21 +37,19 @@
                     </x-dropdown-item>
                 </x-dropdown>
 
-                <form action="/logout" method="POST">
+                <form action="/logout" method="POST" class="flex items-center text-red-500">
                     @csrf
-                    <button type="submit" class="text-xs font-semibold bg-red-500 py-1 px-4 text-white rounded-full">
+                    <button type="submit" class="flex gap-2 text-sm items-center">
                         Logout
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
                     </button>
                 </form>
             @else
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
                 <a href="/login" class="text-xs font-bold uppercase">Login</a>
             @endauth
-
-            <a href="#newsletter"
-               class="bg-red-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                Subscribe for Updates
-            </a>
         </div>
     </nav>
 
