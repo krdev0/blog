@@ -2,7 +2,7 @@
 <article {{$attributes->merge(['class' => 'h-full transition-colors duration-300 border bg-gray-50 rounded-xl'])}}">
     <div class="py-6 px-5 lg:flex flex-col h-full">
         <div class="w-full h-52">
-            <img src="/images/placeholder.jpg" alt="Blog Post illustration" class="rounded-xl object-cover w-full h-full">
+            <img src="{{ $post->thumbnail ? asset('storage/' . $post->thumbnail) : asset('images/placeholder.jpg')}} " alt="Blog Post illustration" class="rounded-xl object-cover w-full h-full">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
