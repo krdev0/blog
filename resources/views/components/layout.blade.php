@@ -21,7 +21,21 @@
 
         <div class="mt-8 md:mt-0 flex items-center gap-4">
             @auth
-                <span>Welcome Back, {{auth()->user()->username}}</span>
+                <x-dropdown>
+                    <x-slot name="trigger">
+                        <button>Welcome Back, {{auth()->user()->name}}</button>
+                    </x-slot>
+
+                    <x-dropdown-item href="/admin/dashboard">
+                        Dashboard
+                    </x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts/create">
+                        New Post
+                    </x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts">
+                        All Posts
+                    </x-dropdown-item>
+                </x-dropdown>
 
                 <form action="/logout" method="POST">
                     @csrf
